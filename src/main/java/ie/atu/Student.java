@@ -1,5 +1,7 @@
 package ie.atu;
 
+import java.util.ArrayList;
+
 public class Student {
     String name;
     String email;
@@ -29,5 +31,14 @@ public class Student {
     }
     String getCourse(){
         return course;
+    }
+
+    static boolean uniqueEmail(String email, ArrayList<Student> students) {
+        for (Student s : students) {
+            if (s.getEmail().equalsIgnoreCase(email)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

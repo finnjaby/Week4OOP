@@ -1,16 +1,20 @@
 package ie.atu;
 
+import java.util.ArrayList;
+
 public class Student {
     String name;
     String email;
     String course;
 
+    //default constructor
     Student(){
         name = "not set";
         email = "not set";
         course = "not set";
     }
 
+    //setters
     void setName(String name){
         this.name = name;
     }
@@ -21,6 +25,7 @@ public class Student {
         this.course = course;
     }
 
+    //getters
     String getName(){
         return name;
     }
@@ -29,5 +34,15 @@ public class Student {
     }
     String getCourse(){
         return course;
+    }
+
+    //check for unique email
+    static boolean uniqueEmail(String email, ArrayList<Student> students) {
+        for (Student s : students) {
+            if (s.getEmail().equalsIgnoreCase(email)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

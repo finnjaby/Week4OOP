@@ -7,12 +7,14 @@ public class Student {
     String email;
     String course;
 
+    //default constructor
     Student(){
         name = "not set";
         email = "not set";
         course = "not set";
     }
 
+    //setters
     void setName(String name){
         this.name = name;
     }
@@ -23,6 +25,7 @@ public class Student {
         this.course = course;
     }
 
+    //getters
     String getName(){
         return name;
     }
@@ -33,6 +36,7 @@ public class Student {
         return course;
     }
 
+    //check for unique email
     static boolean uniqueEmail(String email, ArrayList<Student> students) {
         for (Student s : students) {
             if (s.getEmail().equalsIgnoreCase(email)) {
